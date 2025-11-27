@@ -51,7 +51,7 @@ This bundle is published back to the event bus.
 1. Load Policy + Claim Data
 2. Rule-Based Pre-Checks
 
-Before ML:
+### Before ML:
 
 Policy active?
 Coverage valid for claim type?
@@ -59,7 +59,7 @@ Fraud blacklist?
 Document completeness?
 Duplicate claim check (via embeddings similarity search)
 
-3. ML Classification Models
+### 3. ML Classification Models
 
 A. Claim Type Classifier Model
 
@@ -71,8 +71,8 @@ Gradient Boosted Trees or NN → outputs risk probability
 
 C. Fraud Heuristic Layer
 
-4. LLM Assessment Explanation
-5. Workflow Routing Logic:
+### 4. LLM Assessment Explanation
+### 5. Workflow Routing Logic:
 
 Example:
 IF fraud_score > 0.7:
@@ -84,4 +84,4 @@ ELSE IF risk_score < 0.2 AND claim_amount < 50k:
 ELSE:
     route = "manual_adjuster_review"
 
-6. Output Event Published
+### 6. Output Event Published

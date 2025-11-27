@@ -18,7 +18,7 @@ Agentic behavior reduces need for human orchestration and can pre-flight the cla
 
 ## Flow
 
-1. Customer/Agent Opens the Claim Web Portal
+### 1. Customer/Agent Opens the Claim Web Portal
 
 The frontend UI collects:
 
@@ -30,7 +30,7 @@ Optional Photos (vehicle front, back, RC, driving license)
 Contact Information
 Who was driving
 
-2. API Gateway Routes Request 
+### 2. API Gateway Routes Request 
 
 Instead of sending directly to FastAPI, the browser sends post request.This call hits the API Gateway, not the backend services 
 
@@ -42,7 +42,7 @@ Apply rate limiting
 Block malicious payloads (WAF)
 Route request to claim-intake-service
 
-3. API Gateway → Claim Intake Service (FastAPI):
+### 3. API Gateway → Claim Intake Service (FastAPI):
 
 Gateway forwards request internally: The Claim Intake Service now begins its job.
 
@@ -68,7 +68,7 @@ This dramatically reduces manual work.
 
 Now the portal knows the claim is created, but documents still need to be uploaded.
 
-4. Customer Uploads Photos → S3 Direct Upload
+### 4. Customer Uploads Photos → S3 Direct Upload
 
 User uploads:
 
@@ -80,11 +80,11 @@ Driving license
 These go directly to S3, not through the backend.
  
 
-5. Initial Claim Record Created 
+### 5. Initial Claim Record Created 
 
 Stored in OLTP database. 
 
-6. Claim Intake Service → Publishes "Claim.Created" Event 
+### 6. Claim Intake Service → Publishes "Claim.Created" Event 
 
 ClaimIntakeCompleted event triggers: 
 
@@ -93,7 +93,7 @@ enrichment
 triage 
 fraud baseline scoring 
 
-7. Customer Gets Confirmation 
+### 7. Customer Gets Confirmation 
 
 Claim ID returned, ready for next steps. 
 

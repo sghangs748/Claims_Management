@@ -6,13 +6,13 @@ Trigger by : ClaimIntakeCompleted event (published to the Event Bus after intake
 
 Outcome: DataEnrichmentCompleted event with an enrichment snapshot saved to DB and a pointer for downstream consumers (Triage, Fraud, Damage, etc).
 
-1. Fetch claim snapshot:
+### 1. Fetch claim snapshot:
 
 Call OLTP Claim DB (read replica) to retrieve claim, uploaded file refs, minimal metadata
 
-2. Parallelize enrichment tasks
+### 2. Parallelize enrichment tasks
 
-Policy Service:
+### Policy Service:
 
 Checks: 
 coverage type 
@@ -22,7 +22,7 @@ exclusions
 product type 
 add-ons (zero dep, engine protector, storm protection, etc.)
 
-Customer 360:
+### ustomer 360:
 
 fetch:
 past claims 
@@ -31,7 +31,7 @@ KYC
 behavior profile 
 renewal history 
 
-Asset Master data:
+### Asset Master data:
 
 Depending on product type: 
 
@@ -48,7 +48,7 @@ Property Insurance:
     Fire risk category 
     Previous survey reports 
 
-Historical Claim Similarity (Vector DB):
+### Historical Claim Similarity (Vector DB):
 
 Embeddings from intake stage allow: 
 
@@ -57,7 +57,7 @@ anomaly detection
 fraud pattern matching 
 fast decision support 
 
-Geo APIs:
+### Geo APIs:
 Reverse-geocodes incident location → identifies: 
 
 nearest city 
@@ -65,7 +65,7 @@ crime/fraud hotspot
 accident-prone region 
 flood-zone classification 
 
-Weather APIs:
+### Weather APIs:
 
 Cross-check: 
 rain intensity 
@@ -74,7 +74,7 @@ flood warnings
 temperature 
 visibility 
 
-Third-party Risk APIs:
+### Third-party Risk APIs:
 
 APIs for: 
 fraud blacklists 
@@ -82,7 +82,7 @@ stolen vehicle DB
 identity scoring (e.g., Perfios, Bureau) 
 accident hotspots 
 
-3. Save All Metadata 
+### 3. Save All Metadata 
 
 One consolidated enriched claim object: 
 
@@ -93,9 +93,9 @@ risk score
 asset metadata 
 embedding similarity hits 
 
-4. Event Published 
+### 4. Event Published 
 
-DataEnrichmentCompleted triggers: 
+### DataEnrichmentCompleted triggers: 
 
 triage 
 fraud detection 
