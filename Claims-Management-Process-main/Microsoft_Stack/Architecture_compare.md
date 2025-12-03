@@ -120,7 +120,7 @@ flowchart LR
 
 ## Agentic workflow differences (LangGraph vs Copilot Studio)
 
-| Dimension                 |                                             LangGraph (Custom) | Copilot Studio (MSFT)                                                      |
+| Dimension                 |                                             LangGraph (Custom) | Copilot Studio (Microsoft)                                                      |
 | ------------------------- | -------------------------------------------------------------: | -------------------------------------------------------------------------- |
 | Tool orchestration        | Complete: custom tool chaining, retries, distributed workflows | Good: calls Power Automate / connectors but limited internal agent control |
 | State & memory            |                   Fine-grained, custom persistence & retrieval | Managed memory semantics with Copilot; less low-level control              |
@@ -141,7 +141,7 @@ flowchart LR
 * Observability: OpenTelemetry + Grafana + ELK
 * CI/CD: GitHub Actions / ArgoCD
 
-### Microsoft Stack (reference)
+### Microsoft Stack 
 
 * Copilot Studio (conversational agent)
 * Power Apps (workbench + adjuster UI)
