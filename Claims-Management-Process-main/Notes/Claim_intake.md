@@ -22,13 +22,13 @@ Agentic behavior reduces need for human orchestration and can pre-flight the cla
 
 The frontend UI collects:
 
-Policy Number
-Accident Date/Time
-Accident Location
-Basic Description
-Optional Photos (vehicle front, back, RC, driving license)
-Contact Information
-Who was driving
+1. Policy Number
+2. Accident Date/Time
+3. Accident Location
+4. Basic Description
+5. Optional Photos (vehicle front, back, RC, driving license)
+6. Contact Information
+7. Who was driving
 
 ### 2. API Gateway Routes Request 
 
@@ -36,11 +36,11 @@ Instead of sending directly to FastAPI, the browser sends post request.This call
 
 API Gateway responsibilities here:
 
-Verify customer JWT token 
-Validate headers
-Apply rate limiting
-Block malicious payloads (WAF)
-Route request to claim-intake-service
+1. Verify customer JWT token 
+2. Validate headers
+3. Apply rate limiting
+4. Block malicious payloads (WAF)
+5. Route request to claim-intake-service
 
 ### 3. API Gateway → Claim Intake Service (FastAPI):
 
@@ -48,21 +48,21 @@ Gateway forwards request internally: The Claim Intake Service now begins its job
 
 Claim Intake Service responsibilities:
 
-Validate form fields
-Verify policy number format
-Basic eligibility (policy active? customer valid?)
-Use LLM for Smart Intake
-Assign unique claim_id
-Save initial FNOL (First Notice Of Loss) to database
-Generate S3 Pre-Signed URLs for uploading photos.
+1. Validate form fields
+2. Verify policy number format
+3. Basic eligibility (policy active? customer valid?)
+4. Use LLM for Smart Intake
+5. Assign unique claim_id
+6. Save initial FNOL (First Notice Of Loss) to database
+7. Generate S3 Pre-Signed URLs for uploading photos.
 
 LLM Performs Smart Intake 
 LLM assists by: 
 
-extracting structured data 
-normalizing addresses, dates, narratives 
-identifying missing details 
-generating follow-up questions 
+1. extracting structured data 
+2. normalizing addresses, dates, narratives 
+3. identifying missing details 
+4. generating follow-up questions 
 
 This dramatically reduces manual work. 
 
@@ -72,10 +72,10 @@ Now the portal knows the claim is created, but documents still need to be upload
 
 User uploads:
 
-Damage photo front
-Damage photo rear
-RC book
-Driving license
+1. Damage photo front
+2. Damage photo rear
+3. RC book
+4. Driving license
 
 These go directly to S3, not through the backend.
  
@@ -88,10 +88,10 @@ Stored in OLTP database.
 
 ClaimIntakeCompleted event triggers: 
 
-document ingestion 
-enrichment 
-triage 
-fraud baseline scoring 
+1. document ingestion 
+2. enrichment 
+3. triage 
+4. fraud baseline scoring 
 
 ### 7. Customer Gets Confirmation 
 

@@ -14,32 +14,32 @@ Else
 
 #### What is fetched
 
-Accident photos
-Videos
-CCTV footage (if uploaded)
-Workshop inspection photos
-EXIF metadata (location, timestamp)
-User metadata (upload time, session logs)
-Image embeddings (if already generated)
+1. Accident photos
+2. Videos
+3. CCTV footage (if uploaded)
+4. Workshop inspection photos
+5. EXIF metadata (location, timestamp)
+6. User metadata (upload time, session logs)
+7. Image embeddings (if already generated)
 
 ### 3. Vision AI – Damage Classification:
 
 #### Models
 
-YOLOv8 / YOLOv10 – fast bounding-box detection
-OpenAI Vision – high-level reasoning
-Detectron2 – region-based detection
+1. YOLOv8 / YOLOv10 – fast bounding-box detection
+2. OpenAI Vision – high-level reasoning
+3. Detectron2 – region-based detection
 
 #### What it detects
 
-Dents
-Cracks
-Scratches
-Broken lights
-Deformed panels
-Paint peel
-Glass shatter
-Misalignment
+1. Dents
+2. Cracks
+3. Scratches
+4. Broken lights
+5. Deformed panels
+6. Paint peel
+7. Glass shatter
+8. Misalignment
 
 This is the first machine understanding of what is damaged. Later stages take this as input for repair cost estimation
 
@@ -49,8 +49,8 @@ Identify exact vehicle parts affected, not just generic “dent”.
 
 #### Models
 
-SAM (Segment Anything Model)
-Mask2Former (Transformer-based segmentation)
+1. SAM (Segment Anything Model)
+2. Mask2Former (Transformer-based segmentation)
 
 #### Output
 
@@ -66,23 +66,23 @@ Without this, pricing and garage routing is impossible
 
 #### Convert damage detection into repair complexity:
 
-Minor
-Moderate
-Severe
+1. Minor
+2. Moderate
+3. Severe
 
 #### Input Signals
 
-Depth of dent (estimated from shading + ML)
-Crack length
-Area of scratch
-Mask area (in cm²)
-Location importance (structural vs cosmetic)
-Historical labeled data (training)
+1. Depth of dent (estimated from shading + ML)
+2. Crack length
+3. Area of scratch
+4. Mask area (in cm²)
+5. Location importance (structural vs cosmetic)
+6. Historical labeled data (training)
 
 #### Model type
 
-CNN/ViT regression head
-Multiclass classifier
+1. CNN/ViT regression head
+2. Multiclass classifier
 
 ### 6. Action Mapping
 
@@ -100,42 +100,42 @@ Convert severity → repair action
 
 #### Pull internal cost data:
 
-Labour hours per repair task
-Painting cost per panel
-Standard PDR costs
-Internal OEM part prices (cached)
-Tax percentages
-Workshop negotiated rates
+1. Labour hours per repair task
+2. Painting cost per panel
+3. Standard PDR costs
+4. Internal OEM part prices (cached)
+5. Tax percentages
+6. Workshop negotiated rates
 
 ### 8. Garage API
 
 #### Each garage provides:
 
-Labour rate per hour
-Repair time estimate
-Booth painting charges
-Discount eligibility
-Spare availability
+1. Labour rate per hour
+2. Repair time estimate
+3. Booth painting charges
+4. Discount eligibility
+5. Spare availability
 
 ### 9. Estimation Engine (Core Component)
 
 #### Inputs
 
-Parts list (segmentation)
-Damage type + severity
-Action (repair vs replace)
-Cost lookup (internal/OEM/garage)
-Taxes
+1. Parts list (segmentation)
+2. Damage type + severity
+3. Action (repair vs replace)
+4. Cost lookup (internal/OEM/garage)
+5. Taxes
 
 #### Process
 
 For each damaged part:
 
-calculate repair + paint cost
-calculate replacement cost
-apply labour rate
-apply paint consumables
-Add taxes
+1. calculate repair + paint cost
+2. calculate replacement cost
+3. apply labour rate
+4. apply paint consumables
+5. Add taxes
 
 Generate itemized bill
 

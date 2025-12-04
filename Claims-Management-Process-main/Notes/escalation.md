@@ -8,40 +8,40 @@ This stage handles all claims that cannot be reliably auto-settled. It ensures a
 
 Example:
 
-Rules engine says claim is covered
-LLM says clause interpretation = not covered
-This is a high-risk area → human intervention needed.
+1. Rules engine says claim is covered
+2. LLM says clause interpretation = not covered
+3. This is a high-risk area → human intervention needed.
 
 #### Policy Clause Ambiguity
 
 Some policies contain:
 
-vague definitions
-exceptions within exceptions
-conditional statements
-LLM may return low confidence → send to human.
+1. vague definitions
+2. exceptions within exceptions
+3. conditional statements
+4. LLM may return low confidence → send to human.
 
 #### Severe Damage (> threshold)
 
-Structural damage beyond ₹50,000 or ₹1 lakh often requires:
-multiple workshop quotes
-inspection reports
-higher scrutiny
-Fraud Score Borderline (0.5–0.8)
-Not clearly fraudulent, but suspicious.
+1. Structural damage beyond ₹50,000 or ₹1 lakh often requires:
+2. multiple workshop quotes
+3. inspection reports
+4. higher scrutiny
+5. Fraud Score Borderline (0.5–0.8)
+6. Not clearly fraudulent, but suspicious.
 
 #### Unclear or Conflicting Evidence
 
 Examples:
 
-blurry photos
-night-time images
-mismatch between damage and incident narrative
+1. blurry photos
+2. night-time images
+3. mismatch between damage and incident narrative
 
 #### Missing Data Cases
 
-garage price not available
-rural areas with low digital footprint
+1. garage price not available
+2. rural areas with low digital footprint
 
 ### 2. WORKBENCH QUEUE SYSTEM
 
@@ -49,11 +49,11 @@ This manages how escalated claims are routed to the correct human adjusters.
 
 #### Queue System to ensure:
 
-Load balancing across adjusters
-Region-based routing
-SLA-prioritized case assignment
-Specialist routing (motor vs property vs medical)
-Audit tracking for every claim assignment
+1. Load balancing across adjusters
+2. Region-based routing
+3. SLA-prioritized case assignment
+4. Specialist routing (motor vs property vs medical)
+5. Audit tracking for every claim assignment
 
 ### 3. ADJUSTER UI WORKFLOW
 
@@ -111,10 +111,11 @@ Agentic AI plays a major role here.
 
 Summarizes:
 
-FNOL
-policy coverage
-damage assessment
-fraud findings
+1. FNOL
+2. policy coverage
+3. damage assessment
+4. fraud findings
+
 Example output:
 
 “Claim involves right-side impact with bumper + headlamp damage.
@@ -125,11 +126,11 @@ Fraud score borderline due to similar previous claim.”
 
 Spot anomalies:
 
-inconsistent timestamps
-mismatched geolocation
-duplicate images used in past claims
-EXIF metadata showing image tampering
-lens distortion patterns
+1. inconsistent timestamps
+2. mismatched geolocation
+3. duplicate images used in past claims
+4. EXIF metadata showing image tampering
+5. lens distortion patterns
 
 LLM highlights:
 
@@ -149,10 +150,10 @@ LLM (backed by RAG) responds with exact clause reference:
 
 Based on combined signals:
 
-damage cost
-fraud risk
-policy rules
-LLM reasoning
+1. damage cost
+2. fraud risk
+3. policy rules
+4. LLM reasoning
 
 #### LLM suggests next steps:
 
@@ -218,14 +219,14 @@ Every decision is stored with full auditability.
 
 Stored Data
 
-adjuster ID
-timestamp
-decision type
-LLM assistance logs
-change from auto-estimate (delta)
-justification text
-policy references used
-fraud signals considered
+1. adjuster ID
+2. timestamp
+3. decision type
+4. LLM assistance logs
+5. change from auto-estimate (delta)
+6. justification text
+7. policy references used
+8. fraud signals considered
 
 ### 7. FINAL EVENT EMISSION
 

@@ -15,88 +15,89 @@ Call OLTP Claim DB (read replica) to retrieve claim, uploaded file refs, minimal
 ### Policy Service:
 
 Checks: 
-coverage type 
-limits 
-deductibles 
-exclusions 
-product type 
-add-ons (zero dep, engine protector, storm protection, etc.)
+1. coverage type 
+2. limits 
+3. deductibles 
+4. exclusions 
+5. product type 
+6. add-ons (zero dep, engine protector, storm protection, etc.)
 
-### ustomer 360:
+### Customer 360:
 
 fetch:
-past claims 
-risk score 
-KYC 
-behavior profile 
-renewal history 
+1. past claims 
+2. risk score 
+3. KYC 
+4. behavior profile 
+5. renewal history 
 
 ### Asset Master data:
 
 Depending on product type: 
 
 Motor Insurance:
-    Make/model 
-    CC/kW 
-    Year 
-    IDV 
-    Parts price sheet 
+1. Make/model 
+2. CC/kW 
+3. Year 
+4. IDV 
+5. Parts price sheet 
 
 Property Insurance:
-    Building type 
-    Construction year 
-    Fire risk category 
-    Previous survey reports 
+1. Building type 
+2. Construction year 
+3. Fire risk category 
+4. Previous survey reports 
 
 ### Historical Claim Similarity (Vector DB):
 
 Embeddings from intake stage allow: 
 
-find similar past claims 
-anomaly detection 
-fraud pattern matching 
-fast decision support 
+1. find similar past claims 
+2. anomaly detection 
+3. fraud pattern matching 
+4. fast decision support 
 
 ### Geo APIs:
+
 Reverse-geocodes incident location → identifies: 
 
-nearest city 
-crime/fraud hotspot 
-accident-prone region 
-flood-zone classification 
+1. nearest city 
+2. crime/fraud hotspot 
+3. accident-prone region 
+4. flood-zone classification 
 
 ### Weather APIs:
 
-Cross-check: 
-rain intensity 
-storm alerts 
-flood warnings 
-temperature 
-visibility 
+1. Cross-check: 
+2. rain intensity 
+3. storm alerts 
+4. flood warnings 
+5. temperature 
+6. visibility 
 
 ### Third-party Risk APIs:
 
 APIs for: 
-fraud blacklists 
-stolen vehicle DB 
-identity scoring (e.g., Perfios, Bureau) 
-accident hotspots 
+1. fraud blacklists 
+2. stolen vehicle DB 
+3. identity scoring (e.g., Perfios, Bureau) 
+4. accident hotspots 
 
 ### 3. Save All Metadata 
 
 One consolidated enriched claim object: 
 
-policy snapshot 
-customer360 
-geo + weather 
-risk score 
-asset metadata 
-embedding similarity hits 
+1. policy snapshot 
+2. customer360 
+3. geo + weather 
+4. risk score 
+5. asset metadata 
+6. embedding similarity hits 
 
 ### 4. Event Published 
 
 ### DataEnrichmentCompleted triggers: 
 
-triage 
-fraud detection 
-adjuster assignment 
+1. triage 
+2. fraud detection 
+3. adjuster assignment 

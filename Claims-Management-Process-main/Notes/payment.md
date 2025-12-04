@@ -33,19 +33,21 @@ The Payment Orchestrator must gather all information required to initiate a fina
 
 #### Data fetched:
 
-Bank account number
-Beneficiary name (for bank account validation / penny drop)
-IFSC code
-UPI ID (if customer opted for instant payout)
-Wallet preferences (Paytm, Amazon Pay—rare for insurance)
-Aadhaar-linked account (optional, for direct benefit transfer)
-KYC status (mandatory before paying)
-Compliance flags (internal or regulatory)
+1. Bank account number
+2. Beneficiary name (for bank account validation / penny drop)
+3. IFSC code
+4. UPI ID (if customer opted for instant payout)
+5. Wallet preferences (Paytm, Amazon Pay—rare for insurance)
+6. Aadhaar-linked account (optional, for direct benefit transfer)
+7. KYC status (mandatory before paying)
+8. Compliance flags (internal or regulatory)
 
 #### Services involved:
 
 Claims Master DB → claimant information
+
 KYC Service → PAN/Aadhaar verification
+
 Banking Microservice → validates account, fetches payout method preferences
 
 Insurance payouts cannot be made without validating who is being paid to avoid fraud, AML violations, and compliance breaches.
@@ -59,14 +61,15 @@ Before money leaves the insurance company’s treasury, the system must ensure t
 #### KYC Check
 
 PAN/Aadhaar verified?
+
 Name match between KYC and bank account?
 
 #### AML / Sanction Screening
 
-Ensure claimant isn’t on:
-RBI defaulters list
-internal blacklist
-external AML watchlists
+1. Ensure claimant isn’t on:
+2. RBI defaulters list
+3. internal blacklist
+4. external AML watchlists
 
 #### Fraud Score Check
 

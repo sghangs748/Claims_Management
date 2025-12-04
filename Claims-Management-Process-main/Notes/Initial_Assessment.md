@@ -53,11 +53,11 @@ This bundle is published back to the event bus.
 
 ### Before ML:
 
-Policy active?
-Coverage valid for claim type?
-Fraud blacklist?
-Document completeness?
-Duplicate claim check (via embeddings similarity search)
+1. Policy active?
+2. Coverage valid for claim type?
+3. Fraud blacklist?
+4. Document completeness?
+5. Duplicate claim check (via embeddings similarity search)
 
 ### 3. ML Classification Models
 
